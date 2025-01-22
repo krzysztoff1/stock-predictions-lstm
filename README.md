@@ -71,4 +71,4 @@ ETFs like SPY (S&P 500), QQQ (NASDAQ 100), and VTI (Total Market) show very high
 ![ETFs correlation heat map](https://github.com/user-attachments/assets/aeff97a0-f225-4824-a559-492fd349ee8c)
 ![ETFs correlation chart](https://github.com/user-attachments/assets/b63c6c38-1b6a-437c-b1e3-70fb20872eb4)
 
-
+Some stocks display high correlation with other stocks:
