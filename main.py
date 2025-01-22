@@ -59,7 +59,15 @@ def compare_stocks(symbols, start, end):
 
 
 if __name__ == "__main__":
-    symbols = ["TSLA", "AAPL", "NVDA"]
+    symbols = [
+        # "TSLA",
+        # "AAPL",
+        # "NVDA",
+        "SPY",  # S&P 500 ETF
+        "QQQ",  # Nasdaq 100 ETF
+        "VTI",  # Total Stock Market ETF
+        "VUSA.L",
+    ]
     start = "2019-01-01"  # Using 5 years of data
     end = "2024-02-21"
     compare_stocks(symbols, start, end)
