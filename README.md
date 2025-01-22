@@ -128,8 +128,11 @@ ETFs like SPY (S&P 500), QQQ (NASDAQ 100), and VTI (Total Market) show very high
 - When the overall market moves up or down, these ETFs tend to move together
 
 ![ETFs correlation heat map](https://github.com/user-attachments/assets/aeff97a0-f225-4824-a559-492fd349ee8c)
+
 ![ETFs correlation chart](https://github.com/user-attachments/assets/b63c6c38-1b6a-437c-b1e3-70fb20872eb4)
 
 #### Stock Correlations
 
 Some stocks display high correlation with each other. For example, V (Visa) and MA (Mastercard):
+
+![v-ma](https://github.com/user-attachments/assets/9547dc48-f056-474b-a93b-7279c8c43a43)
