@@ -95,7 +95,8 @@ if __name__ == "__main__":
     ]
 
     # stocks_to_compare = etfs + stocks
-    stocks_to_compare = etfs
+    # stocks_to_compare = etfs
+    stocks_to_compare = stocks
 
     start = "2020-01-01"
     end = "2024-01-01"
