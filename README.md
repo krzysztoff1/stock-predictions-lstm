@@ -1,7 +1,8 @@
 # Stock Predictions
 
 A Python-based machine learning project for predicting stock market movements using historical data and advanced analytics.
-![Preview](https://github.com/user-attachments/assets/49744aef-ec1c-4b2f-b3f0-d8991efb5f68)
+![Preview](https://github.com/user-attachments/assets/ac3d25ca-fefa-4c8b-b7f4-5e5f58a9d65f)
+
 
 ## Setup
 
