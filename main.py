@@ -1,7 +1,7 @@
 import pandas as pd
 from data_processing import download_stock_data, prepare_data
 from model import create_lstm_model, predict_future
-from visualization import plot_stock_predictions
+from visualization import plot_stock_predictions_multi
 
 
 def predict_stock_price(symbol, start, end):
@@ -12,13 +12,12 @@ def predict_stock_price(symbol, start, end):
     )
 
     model = create_lstm_model(time_step)
-    model.fit(X_train, y_train, epochs=10, batch_size=64)
-    model.summary()
+    model.fit(X_train, y_train, epochs=10, batch_size=64, verbose=0)
 
-    test_loss = model.evaluate(X_test, y_test)
-    print("Test Loss:", test_loss)
+    test_loss = model.evaluate(X_test, y_test, verbose=0)
+    print(f"{symbol} Test Loss:", test_loss)
 
-    predictions = model.predict(X_test)
+    predictions = model.predict(X_test, verbose=0)
     predictions = scaler.inverse_transform(predictions)
     actual_values = scaler.inverse_transform(y_test.reshape(-1, 1))
     full_actual_values = stock_data["Close"].values
@@ -36,18 +35,31 @@ def predict_stock_price(symbol, start, end):
         start=last_date + pd.Timedelta(days=1), periods=future_days, freq="B"
     )
 
-    plot_stock_predictions(
-        stock_data,
-        predictions,
-        actual_values,
-        full_actual_values,
-        future_predictions,
-        future_dates,
-        time_step,
-        training_data_size,
-        symbol,
-    )
+    return {
+        "stock_data": stock_data,
+        "predictions": predictions,
+        "actual_values": actual_values,
+        "full_actual_values": full_actual_values,
+        "future_predictions": future_predictions,
+        "future_dates": future_dates,
+        "time_step": time_step,
+        "training_data_size": training_data_size,
+        "symbol": symbol,
+    }
+
+
+def compare_stocks(symbols, start, end):
+    predictions_data = []
+    for symbol in symbols:
+        print(f"\nProcessing {symbol}...")
+        stock_prediction = predict_stock_price(symbol, start, end)
+        predictions_data.append(stock_prediction)
+
+    plot_stock_predictions_multi(predictions_data)
 
 
 if __name__ == "__main__":
-    predict_stock_price("DAC", start="2014-02-21", end="2024-02-21")
+    symbols = ["TSLA", "AAPL", "NVDA"]
+    start = "2019-01-01"  # Using 5 years of data
+    end = "2024-02-21"
+    compare_stocks(symbols, start, end)
