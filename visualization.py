@@ -131,32 +131,3 @@ def plot_stock_predictions_multi(predictions_data):
 
     plt.tight_layout()
     plt.show()
-
-
-def plot_stock_predictions(
-    stock_data,
-    predictions,
-    actual_values,
-    full_actual_values,
-    future_predictions,
-    future_dates,
-    time_step,
-    training_data_size,
-    symbol,
-):
-    """Single stock prediction plot (kept for backward compatibility)"""
-    plot_stock_predictions_multi(
-        [
-            {
-                "stock_data": stock_data,
-                "predictions": predictions,
-                "actual_values": actual_values,
-                "full_actual_values": full_actual_values,
-                "future_predictions": future_predictions,
-                "future_dates": future_dates,
-                "time_step": time_step,
-                "training_data_size": training_data_size,
-                "symbol": symbol,
-            }
-        ]
-    )
