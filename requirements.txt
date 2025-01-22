@@ -1,7 +1,8 @@
-yfinance
+yfinance>=0.2.36
 scikit-learn
-numpy
-matplotlib
+numpy>=1.24.0
+matplotlib>=3.8.0
 keras==2.15.0
 tensorflow
-pandas
+pandas>=2.0.0
+seaborn>=0.13.0

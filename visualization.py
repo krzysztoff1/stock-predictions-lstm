@@ -131,3 +131,4 @@ def plot_stock_predictions_multi(predictions_data):
 
     plt.tight_layout()
     plt.show()
+    plt.savefig("stock_predictions.png", bbox_inches="tight", dpi=300)
