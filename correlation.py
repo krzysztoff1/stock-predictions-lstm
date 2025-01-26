@@ -98,7 +98,7 @@ if __name__ == "__main__":
     # stocks_to_compare = etfs
     stocks_to_compare = stocks
 
-    start = "2020-01-01"
+    start = "2023-01-01"  # Using 5 years of data
     end = "2024-01-01"
 
     correlation_matrix, price_data = calculate_stock_correlations(
